@@ -7,9 +7,10 @@ This documentation covers everything I have done and explains everything down to
 The reader is assumed to be familiar with what a neural network is; however, here is a brief overview if this is not the case. 
 A neural network can be assumed to be a stack of layers that performs some nonlinear operation on the input it receives. The question now becomes, what nonlinear operation is it?
 A layer begins with applying some linear transformation on the input vector, as depicted below,
-{matrix multiplication}
-The transformed input vector is then subjected to a nonlinear activation function which induces the nonlinear characteristic of the layer as follows:
-{activation function}
+
+![alt text](https://github.com/VANRao-Stack/GSoC-Evaluation-Task/blob/main/GSoC/Rfa820c39bee5644022a5c3939432b483.png)
+
+The transformed input vector is then subjected to a nonlinear activation function which induces the nonlinear characteristic of the layer.
 These layers then can be stacked on top of one another, and a network with more than two layers is called a deep neural network. 
 Now, what is an Autoencoder, and how does it help compress data?
 An autoencoder is a neural network that tries to reconstruct its input.
