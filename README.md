@@ -3,7 +3,7 @@ In this evaluation task, I have tried to alleviate the problem by writing an Aut
 This documentation covers everything I have done and explains everything down to the last detail. 
 
 # Introduction 
-## Autoencoders
+## Neural Networks and Autoencoders
 The reader is assumed to be familiar with what a neural network is; however, here is a brief overview if this is not the case. 
 A neural network can be assumed to be a stack of layers that performs some nonlinear operation on the input it receives. The question now becomes, what nonlinear operation is it?
 A layer begins with applying some linear transformation on the input vector, as depicted below,
