@@ -30,7 +30,7 @@ Once this is done, we move to pre-process the data.
 # Pre-Processing 
 In analyzing a particle's four-momentum, we can observe that E1 and pT1 were skewed, whereas the eta1 was almost gaussian shaped. It is hard to describe the exact shape of phi1, but it was close to being uniform. I proceeded to standardize it, after which it looked something like this.
 
-![alt text](https://github.com/VANRao-Stack/gsoc_eval_task/blob/main/GSoC/WhatsApp%20Image%202021-03-13%20at%2023.18.08.jpeg)
+![alt text](https://github.com/VANRao-Stack/GSoC-Evaluation-Task/blob/main/GSoC/WhatsApp%20Image%202021-03-13%20at%2023.18.08.jpeg)
 
 Numerical input variables may have a highly skewed or non-standard distribution.
 This could be caused by outliers in the data, multi-modal distributions, highly exponential distributions, and more.
@@ -38,7 +38,7 @@ In our case, we notice that the histogram of E1 and pT1 are both highly right-sk
 Many machine learning algorithms, including Neural Networks, prefer or perform better when numerical input variables and even output variables in the case of regression have a standard probability distribution, such as a Gaussian (normal) or a uniform distribution.
 We see that E1 and pT1 are still skewed. One thing that was suggested as part of Eric Wulff's thesis was using logarithmic transform on the two columns to normalize them. Performing the suggested transformations and then standardizing results in the following dataset.
 
-![alt text](https://github.com/VANRao-Stack/gsoc_eval_task/blob/main/GSoC/Screenshot%202021-03-13%20233256.png)
+![alt text](https://github.com/VANRao-Stack/GSoC-Evaluation-Task/blob/main/GSoC/Screenshot%202021-03-13%20233256.png)
 
 Although this does normalize the data, I also tried using the Quantile transformation to normalize the data. 
 A quantile transform will map a variable's probability distribution to another probability distribution.
@@ -46,7 +46,7 @@ Recall that a quantile function, also called a percent-point function (PPF), is 
 The quantile function ranks or smooths out the relationship between observations and can be mapped onto other distributions, such as the uniform or normal distribution.
 We map our data to the Gaussian distribution and standardize it; this results in the following dataset. 
 
-![alt text](https://github.com/VANRao-Stack/gsoc_eval_task/blob/main/GSoC/Screenshot%202021-03-14%20013932.png)
+![alt text](https://github.com/VANRao-Stack/GSoC-Evaluation-Task/blob/main/GSoC/Screenshot%202021-03-14%20013932.png)
 
 To summarize, we created two versions of the same dataset, 
 A dataset, as described in Eric Wulff's thesis, called the standard dataset henceforth. 
@@ -71,11 +71,11 @@ Below, I plot the input data, and the output data overlapped on each other as hi
 
 1. Standard Model Overlap Model
 
-![alt text](https://github.com/VANRao-Stack/gsoc_eval_task/blob/main/GSoC/standard.png)
+![alt text](https://github.com/VANRao-Stack/GSoC-Evaluation-Task/blob/main/GSoC/standard.png)
 
 2. Gauss Model Overlap Model
 
-![alt text](https://github.com/VANRao-Stack/gsoc_eval_task/blob/main/GSoC/gauss.png)
+![alt text](https://github.com/VANRao-Stack/GSoC-Evaluation-Task/blob/main/GSoC/gauss.png)
 
 We see that both the models have learned a very decent representation of the given data, and with a training time of just around 200 epochs (around 2 minutes on a CPU), the model performs quite well. 
 
