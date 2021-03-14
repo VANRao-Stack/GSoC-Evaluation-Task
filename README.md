@@ -85,3 +85,14 @@ We now use the test dataset prepared at the start to see how the two models perf
 We see that the model trained on the standard dataset has an average MSE loss of the order of 10**(-6), whereas the model trained on the Gaussian Quantile transformed data has an average MSE loss of the order 10**(-5). 
 Note that the autoencoder selected was selected based on Eric Wulff's thesis, which was based on the standard dataset, being so close in average MSE loss, it would be interesting to see how another model of a different size designed to the Gaussian Quantile transformed data, would fair against the original model. 
 
+
+# Additional Notes
+1. In the 4-dimensional dataset, pT and E are highly correlated. Try compressing by removing E and predicting E from pT, eta, and phi. 
+2. In the 27-dimensional dataset, nested lists and booleans were ignored. Try using convolution and boosting methods, depending on the structure of the data. 
+3. Try using SELU instead of leaky ReLU with the batch norm for doing self normalization with reducing training cost. 
+4. Second-order optimizer would start with a high training error even if the model were trained using the first-order optimizer for a long time. 
+5. Discrete values were not treated differently; try using one-hot encoding. 
+6. Different NN architectures may help. Try using Variational Autoencoder or even tabnet. 
+7. In both the thesis (Wallin and Wulff's), the evaluation metric used is either MSE or residual evaluation. As mentioned previously, pT and E are highly correlated, meaning that when using MSE, we are placing more importance on reconstructing the correlation between the pT and E as it is evaluated twice, try using weighted MSE or asymmetric loss. 
+8. Another method to combat the issue mentioned above is to use a TabNet like masking feature to generate latent outputs. 
+
